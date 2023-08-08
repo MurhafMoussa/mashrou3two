@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:mashrou3two/core/errors/network_exceptions.dart';
 
 part 'standard_state.freezed.dart';

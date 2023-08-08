@@ -20,12 +20,12 @@ import 'package:mashrou3two/core/api/logging_interceptor.dart' as _i6;
 import 'package:mashrou3two/core/local_storage/hive.dart' as _i4;
 import 'package:mashrou3two/core/network/netwok_info.dart' as _i7;
 import 'package:mashrou3two/core/third_party_injection.dart' as _i13;
-import 'package:mashrou3two/features/auth/data/authentication_remote_data_source.dart'
+import 'package:mashrou3two/features/auth/data/authentication_local_data_source.dart'
     as _i10;
-import 'package:mashrou3two/features/auth/domain/authentication_cubit.dart'
-    as _i12;
-import 'package:mashrou3two/features/auth/domain/authentication_repository.dart'
+import 'package:mashrou3two/features/auth/data/authentication_remote_data_source.dart'
     as _i11;
+import 'package:mashrou3two/features/auth/domain/authentication_repository.dart'
+    as _i12;
 
 extension GetItInjectableX on _i1.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -48,15 +48,17 @@ extension GetItInjectableX on _i1.GetIt {
     gh.lazySingleton<_i7.NetworkInfo>(() => _i7.NetworkInfoImpl(
         connectionChecker: gh<_i5.InternetConnectionChecker>()));
     gh.singleton<_i8.ApiConsumer>(_i9.DioConsumer(gh<_i3.Dio>()));
-    gh.lazySingleton<_i10.AuthenticationRemoteDataSource>(
-        () => _i10.AuthenticationRemoteDataSource(gh<_i8.ApiConsumer>()));
-    gh.lazySingleton<_i11.AuthenticationRepository>(
-        () => _i11.AuthenticationRepository(
+    gh.lazySingleton<_i10.AuthenticationLocalDataSource<dynamic>>(() =>
+        _i10.AuthenticationLocalDataSource<dynamic>(
+            gh<_i4.HiveImplementation<dynamic>>()));
+    gh.lazySingleton<_i11.AuthenticationRemoteDataSource>(
+        () => _i11.AuthenticationRemoteDataSource(gh<_i8.ApiConsumer>()));
+    gh.lazySingleton<_i12.AuthenticationRepository>(
+        () => _i12.AuthenticationRepository(
               gh<_i7.NetworkInfo>(),
-              gh<_i10.AuthenticationRemoteDataSource>(),
+              gh<_i11.AuthenticationRemoteDataSource>(),
+              gh<_i10.AuthenticationLocalDataSource<dynamic>>(),
             ));
-    gh.lazySingleton<_i12.AuthenticationCubit>(
-        () => _i12.AuthenticationCubit(gh<_i11.AuthenticationRepository>()));
     return this;
   }
 }

@@ -1,4 +1,5 @@
 import 'package:mashrou3two/core/extensions/string_extensions.dart';
+import 'package:mashrou3two/core/utils/app_utils.dart';
 
 ///* so here we just validate the user input .. the validation instructuins
 ///* will be displayed in the tool tip
@@ -10,9 +11,9 @@ class AppValidation {
     String? password,
   ) {
     if (passwordConfirmation == null || passwordConfirmation.isEmpty) {
-      return '';
+      return 'password confirmation field is required';
     } else if (passwordConfirmation != password) {
-      return '';
+      return "password confirmation doesn't match";
     } else {
       return null;
     }
@@ -32,13 +33,13 @@ class AppValidation {
     String? value,
   ) {
     if (value == null || value.isEmpty) {
-      return '';
+      return 'password field is required';
     } else if (value.length < 8) {
-      return '';
+      return 'password must be greater than 7 characters';
     } else if (!value.contains(RegExp('(?=.*[A-Za-z])'))) {
-      return '';
+      return 'password must contain at least one letter';
     } else if (!value.contains(RegExp('[0-9]'))) {
-      return '';
+      return 'password must contain at least one number';
     } else {
       return null;
     }
@@ -79,13 +80,37 @@ class AppValidation {
 //     }
 //   }
 
-  static String? validateName(
+  static String? validateFirstName(
     String? value,
   ) {
     if (value == null || value.isEmpty) {
-      return '';
+      return 'first name is required';
     } else if (value.length < 4) {
-      return '';
+      return 'first name must be at least 4 characters';
+    } else {
+      return null;
+    }
+  }
+
+  static String? validateLastName(
+    String? value,
+  ) {
+    if (value == null || value.isEmpty) {
+      return 'last name is required';
+    } else if (value.length < 4) {
+      return 'last name must be at least 4 characters';
+    } else {
+      return null;
+    }
+  }
+
+  static String? validatePhoneNumber(
+    String? value,
+  ) {
+    if (value == null || value.isEmpty) {
+      return 'phone number is required';
+    } else if (!AppUtils.isPhoneNumber(value)) {
+      return 'enter a valid phone number';
     } else {
       return null;
     }
@@ -95,9 +120,9 @@ class AppValidation {
     String? value,
   ) {
     if (value == null || value.isEmpty) {
-      return '';
+      return null;
     } else if (!value.isEmail) {
-      return '';
+      return 'enter a valid email';
     } else {
       return null;
     }

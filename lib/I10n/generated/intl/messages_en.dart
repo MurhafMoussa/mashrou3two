@@ -22,6 +22,32 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "appTitle": MessageLookupByLibrary.simpleMessage("Waffer")
+        "account": MessageLookupByLibrary.simpleMessage("Account"),
+        "appTitle": MessageLookupByLibrary.simpleMessage("Wassalni"),
+        "areYouA": MessageLookupByLibrary.simpleMessage("Are you a"),
+        "cancel": MessageLookupByLibrary.simpleMessage("cancel"),
+        "confirmPassword":
+            MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "continueWord": MessageLookupByLibrary.simpleMessage("continue"),
+        "dateOfBirthOptional":
+            MessageLookupByLibrary.simpleMessage("Date Of Birth (Optional)"),
+        "emailoptional":
+            MessageLookupByLibrary.simpleMessage("Email(optional)"),
+        "finish": MessageLookupByLibrary.simpleMessage("Finish"),
+        "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
+        "genderOptional":
+            MessageLookupByLibrary.simpleMessage("Gender (Optional)"),
+        "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "regester": MessageLookupByLibrary.simpleMessage("regester"),
+        "registration": MessageLookupByLibrary.simpleMessage("Registration"),
+        "tapToChooseDate":
+            MessageLookupByLibrary.simpleMessage("Tap to choose date"),
+        "tourismCompany":
+            MessageLookupByLibrary.simpleMessage("Tourism Company"),
+        "tourismFacility":
+            MessageLookupByLibrary.simpleMessage("Tourism Facility"),
+        "tourist": MessageLookupByLibrary.simpleMessage("Tourist")
       };
 }

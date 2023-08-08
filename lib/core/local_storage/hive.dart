@@ -1,5 +1,6 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
+
 import 'package:mashrou3two/core/errors/network_exceptions.dart';
 
 @lazySingleton

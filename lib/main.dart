@@ -8,7 +8,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mashrou3two/I10n/generated/l10n.dart';
 import 'package:mashrou3two/bloc_observer.dart';
 import 'package:mashrou3two/core/resources/color_manager.dart';
+import 'package:mashrou3two/core/resources/routes_manger.dart';
 import 'package:mashrou3two/core/resources/strings_manager.dart';
+import 'package:mashrou3two/core/resources/theme_manager.dart';
+import 'package:mashrou3two/features/auth/domain/authentication_cubit.dart';
+import 'package:mashrou3two/features/auth/domain/authentication_repository.dart';
 import 'package:mashrou3two/injection.dart';
 
 Future<void> main() async {
@@ -40,24 +44,36 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
+  final routesManager = RoutesManager();
   @override
-  Widget build(BuildContext context) => ScreenUtilInit(
-        designSize: const Size(375, 812),
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: (context, widget) => MaterialApp.router(
-          onGenerateTitle: (BuildContext context) =>
-              AppLocalizations.of(context).appTitle,
-          localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
-            AppLocalizations.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: const [
-            Locale(StringsManager.english),
-          ],
-          debugShowCheckedModeBanner: false,
+  Widget build(BuildContext context) => MultiBlocProvider(
+        providers: [
+          BlocProvider<AuthenticationCubit>(
+            create: (context) =>
+                AuthenticationCubit(getIt.get<AuthenticationRepository>()),
+          ),
+        ],
+        child: ScreenUtilInit(
+          designSize: const Size(375, 812),
+          minTextAdapt: true,
+          splitScreenMode: true,
+          builder: (context, widget) => MaterialApp.router(
+            onGenerateTitle: (BuildContext context) =>
+                AppLocalizations.of(context).appTitle,
+            localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: const [
+              Locale(StringsManager.english),
+            ],
+            debugShowCheckedModeBanner: false,
+            color: ColorManager.white,
+            theme: getApplicationThemeData(),
+            routerConfig: routesManager.router,
+          ),
         ),
       );
 }

@@ -50,11 +50,201 @@ class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  /// `Waffer`
+  /// `Wassalni`
   String get appTitle {
     return Intl.message(
-      'Waffer',
+      'Wassalni',
       name: 'appTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Registration`
+  String get registration {
+    return Intl.message(
+      'Registration',
+      name: 'registration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `continue`
+  String get continueWord {
+    return Intl.message(
+      'continue',
+      name: 'continueWord',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tourism Company`
+  String get tourismCompany {
+    return Intl.message(
+      'Tourism Company',
+      name: 'tourismCompany',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tourism Facility`
+  String get tourismFacility {
+    return Intl.message(
+      'Tourism Facility',
+      name: 'tourismFacility',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tourist`
+  String get tourist {
+    return Intl.message(
+      'Tourist',
+      name: 'tourist',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you a`
+  String get areYouA {
+    return Intl.message(
+      'Are you a',
+      name: 'areYouA',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account`
+  String get account {
+    return Intl.message(
+      'Account',
+      name: 'account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First Name`
+  String get firstName {
+    return Intl.message(
+      'First Name',
+      name: 'firstName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last Name`
+  String get lastName {
+    return Intl.message(
+      'Last Name',
+      name: 'lastName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phoneNumber {
+    return Intl.message(
+      'Phone Number',
+      name: 'phoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email(optional)`
+  String get emailoptional {
+    return Intl.message(
+      'Email(optional)',
+      name: 'emailoptional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date Of Birth (Optional)`
+  String get dateOfBirthOptional {
+    return Intl.message(
+      'Date Of Birth (Optional)',
+      name: 'dateOfBirthOptional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gender (Optional)`
+  String get genderOptional {
+    return Intl.message(
+      'Gender (Optional)',
+      name: 'genderOptional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tap to choose date`
+  String get tapToChooseDate {
+    return Intl.message(
+      'Tap to choose date',
+      name: 'tapToChooseDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `cancel`
+  String get cancel {
+    return Intl.message(
+      'cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `regester`
+  String get regester {
+    return Intl.message(
+      'regester',
+      name: 'regester',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finish`
+  String get finish {
+    return Intl.message(
+      'Finish',
+      name: 'finish',
       desc: '',
       args: [],
     );

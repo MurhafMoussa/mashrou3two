@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
 /// Returns whether a dynamic value PROBABLY
 /// has the isEmpty getter/method by checking
 /// standard dart types that contains it.
@@ -208,6 +211,26 @@ class AppUtils {
       return false;
     }
     return hasMatch(s, r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$');
+  }
+
+  static Future<void> pickDateOfBirth(
+      BuildContext context, TextEditingController dateOfBirthController) async {
+    {
+      DateTime? pickedDate = await showDatePicker(
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(1950),
+        lastDate: DateTime.now(),
+        builder: (context, child) => Theme(
+          data: ThemeData.light().copyWith(),
+          child: child!,
+        ),
+      );
+      if (pickedDate != null) {
+        String formattedDate = DateFormat('yyyy-MM-dd').format(pickedDate);
+        dateOfBirthController.text = formattedDate;
+      }
+    }
   }
 
   /// Checks if string is DateTime (UTC or Iso8601).

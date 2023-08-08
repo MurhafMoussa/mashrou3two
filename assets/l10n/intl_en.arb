@@ -1,6 +1,23 @@
 {
   "@@locale": "en",
-  "appTitle": "Waffer"
-
-
+  "appTitle": "Wassalni",
+  "registration": "Registration",
+  "continueWord": "continue",
+  "tourismCompany": "Tourism Company",
+  "tourismFacility": "Tourism Facility",
+  "tourist": "Tourist",
+  "areYouA": "Are you a",
+  "account": "Account",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "phoneNumber": "Phone Number",
+  "password": "Password",
+  "confirmPassword": "Confirm Password",
+  "emailoptional": "Email(optional)",
+  "dateOfBirthOptional": "Date Of Birth (Optional)",
+  "genderOptional": "Gender (Optional)",
+  "tapToChooseDate": "Tap to choose date",
+  "cancel": "cancel",
+  "regester": "regester",
+  "finish": "Finish"
 }

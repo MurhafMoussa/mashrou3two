@@ -20,7 +20,7 @@ class PaddingManager {
   ).w;
   static EdgeInsets appTotalWithStepperPadding = const EdgeInsets.symmetric(
     horizontal: horizontal,
-    vertical: bottom,
+    vertical: p30,
   ).w;
   static EdgeInsets appPaddingWithoutTop = const EdgeInsets.only(
     left: left,
